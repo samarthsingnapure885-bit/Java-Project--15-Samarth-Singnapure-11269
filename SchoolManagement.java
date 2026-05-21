@@ -1,33 +1,32 @@
-// Base Class
+// SCHOOL ADMINISTRATION MANAGEMENT -> 
+
 class Person {
     String name;
     int age;
 
-    // Constructor
-    Person(String name, int age) {
+  Person(String name, int age) {
         this.name = name;
         this.age = age;
     }
 
-    // Method
+    
     void showRole() {
         System.out.println("I am a person.");
     }
 }
 
-// Teacher Class
+
 class Teacher extends Person {
     String subject;
     double salary;
 
-    // Constructor
+
     Teacher(String name, int age, String subject, double salary) {
-        super(name, age); // calls parent constructor
+        super(name, age); 
         this.subject = subject;
         this.salary = salary;
     }
 
-    // Method Overriding
     @Override
     void showRole() {
         System.out.println("----- /Teacher Details./ -----");
@@ -39,19 +38,18 @@ class Teacher extends Person {
     }
 }
 
-// Student Class
 class Student extends Person {
     int rollNumber;
     String course;
 
-    // Constructor
+    
     Student(String name, int age, int rollNumber, String course) {
-        super(name, age); // calls parent constructor
+        super(name, age); 
         this.rollNumber = rollNumber;
         this.course = course;
     }
 
-    // Method Overriding
+    
     @Override
     void showRole() {
         System.out.println("----- /Student Details./ -----");
@@ -66,7 +64,6 @@ class Student extends Person {
 public class SchoolManagement {
     public static void main(String[] args) {
 
-        // Creating Teacher Object
         Teacher t1 = new Teacher(
                 "Ashish Shivhare",
                 25,
@@ -74,21 +71,18 @@ public class SchoolManagement {
                 50000
         );
 
-        // Creating Student Object
         Student s1 = new Student(
                 "Samarth Singnapure",
                 19,
                 11269,
                 "CSE AIML"
         );
-
-        // Polymorphism
         Person[] people = new Person[2];
 
         people[0] = t1;
         people[1] = s1;
 
-        // Loop through array
+        
         for (Person p : people) {
             p.showRole();
             System.out.println();
